@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Escape Engine">
+      <UniqueIdentifier>{79a0dfc6-6b58-4bdc-bfc1-aab32812f22a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Escape Engine\Events">
+      <UniqueIdentifier>{786f78e4-7547-4b96-b050-9ddb55f8dd7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Escape Engine\App">
+      <UniqueIdentifier>{1a7e02fa-2fd4-40c1-8889-1a161812710f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Escape Engine\engine">
+      <UniqueIdentifier>{5de5f833-b0bc-43c5-b42d-3458317e83dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="escape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Events\IEventHandler.h">
+      <Filter>Escape Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\App\App.h">
+      <Filter>Escape Engine\App</Filter>
+    </ClInclude>
+    <ClInclude Include="Screamer.h">
+      <Filter>Escape Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Events\EventManagement.h">
+      <Filter>Escape Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\EngineDx12\engine.h">
+      <Filter>Escape Engine\engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="escape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\App\App.cpp">
+      <Filter>Escape Engine\App</Filter>
+    </ClCompile>
+    <ClCompile Include="EventManagement.cpp">
+      <Filter>Escape Engine\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="IEventHandler.cpp">
+      <Filter>Escape Engine\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\EngineDx12\engine.cpp">
+      <Filter>Escape Engine\engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
