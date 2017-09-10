@@ -69,13 +69,17 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Workspace\Project Escape\escape;C:\Workspace\Project Escape\escape\engine;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Workspace\Project Escape\escape;C:\Workspace\Project Escape\escape\engine;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\um;$(IncludePath)</IncludePath>
+    <OutDir>..\..\_bin\Debug</OutDir>
+    <IntDir>..\..\_bin\</IntDir>
+    <TargetName>escape_32</TargetName>
+    <LibraryPath>C:\Program Files %28x86%29\Windows Kits\10\Lib\10.0.10586.0\um\x86;C:\Workspace\bin;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\um;C:\Workspace\Project Escape\escape;C:\Workspace\Project Escape\escape\engine;$(IncludePath)</IncludePath>
     <OutDir>..\..\_bin\Debug</OutDir>
-    <IntDir>..\..\_bin\Debug</IntDir>
+    <IntDir>..\..\_bin\</IntDir>
     <LibraryPath>C:\Workspace\bin;C:\Program Files %28x86%29\Windows Kits\10\Lib\10.0.10240.0\um\x64;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10586.0\um\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -111,6 +115,13 @@
       <MapExports>true</MapExports>
       <AdditionalDependencies>d3d12.lib;dxgi.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)$(TargetFileName)" "C:\Mydestination" /s /i /y
+xcopy "$(TargetDir)$(TargetFileName)" "C:\Workspace\_FinalGame\Debug" /s /i /y
+xcopy "$(TargetDir)$(TargetFileName)" "C:\Program Files\Autodesk\Maya2015\bin" /s /i /y
+
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -150,16 +161,26 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DDSTextureLoader.h" />
     <ClInclude Include="engine\App\App.h" />
     <ClInclude Include="engine\EngineDx12\engine.h" />
     <ClInclude Include="engine\Events\EventManagement.h" />
     <ClInclude Include="engine\Events\IEventHandler.h" />
     <ClInclude Include="escape.h" />
+    <ClInclude Include="FileStructs.h" />
+    <ClInclude Include="LoadMeshes.h" />
+    <ClInclude Include="LZ4\lz4.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Screamer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="XConvertor.h" />
+    <ClInclude Include="XLibrary\XFile2.h" />
+    <ClInclude Include="XLibrary\XVector.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DDSTextureLoader.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
@@ -179,12 +200,23 @@
     <ClCompile Include="escape.cpp" />
     <ClCompile Include="EventManagement.cpp" />
     <ClCompile Include="IEventHandler.cpp" />
+    <ClCompile Include="LZ4\lz4.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="XLibrary\XFile2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\_FinalGame\Debug\data\background.dds" />
+    <Image Include="..\..\_FinalGame\Debug\data\background1.dds" />
+    <Image Include="..\..\_FinalGame\Debug\data\background2.dds" />
+    <Image Include="..\..\_FinalGame\Debug\data\sky.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

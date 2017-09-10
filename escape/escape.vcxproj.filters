@@ -25,6 +25,12 @@
     <Filter Include="Escape Engine\engine">
       <UniqueIdentifier>{5de5f833-b0bc-43c5-b42d-3458317e83dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Xlibrary">
+      <UniqueIdentifier>{b4d4ac66-7145-495c-a9ec-26b820e3aef9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lz4">
+      <UniqueIdentifier>{eac7740f-a8b5-42ba-a54f-cade199befb4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -54,6 +60,33 @@
     <ClInclude Include="engine\EngineDx12\engine.h">
       <Filter>Escape Engine\engine</Filter>
     </ClInclude>
+    <ClInclude Include="XLibrary\XFile2.h">
+      <Filter>Xlibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="LZ4\lz4.h">
+      <Filter>lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="FileStructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XLibrary\XVector.h">
+      <Filter>Xlibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadMeshes.h">
+      <Filter>Escape Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Escape Engine\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="XConvertor.h">
+      <Filter>Xlibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="DDSTextureLoader.h">
+      <Filter>Xlibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -77,5 +110,33 @@
     <ClCompile Include="engine\EngineDx12\engine.cpp">
       <Filter>Escape Engine\engine</Filter>
     </ClCompile>
+    <ClCompile Include="XLibrary\XFile2.cpp">
+      <Filter>Xlibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="LZ4\lz4.cpp">
+      <Filter>lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSTextureLoader.cpp">
+      <Filter>Xlibrary</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\_FinalGame\Debug\data\background.dds">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\_FinalGame\Debug\data\sky.dds">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\_FinalGame\Debug\data\background1.dds">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\_FinalGame\Debug\data\background2.dds">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

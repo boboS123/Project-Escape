@@ -11,7 +11,7 @@
 // Windows Header Files:
 #include <windows.h>
 #define SAFE_RELEASE(p) { if ( (p) ) { (p)->Release(); (p) = 0; } }
-
+#include "resource.h"
 #include <windows.h>
 #include <d3d12.h>
 #include <dxgi1_4.h>
@@ -22,17 +22,24 @@
 #include <wincodec.h>
 #include <iostream>
 #include <fstream>
+
+
+
 // this will only call release if an object exists (prevents exceptions calling release on non existant objects)
 #define SAFE_RELEASE(p) { if ( (p) ) { (p)->Release(); (p) = 0; } }
-
+#include <wrl.h>
 using namespace DirectX; // we will be using the directxmath library
 
 struct Vertex {
-	Vertex(float x, float y, float z, float u, float v) : pos(x, y, z), texCoord(u, v) {}
-	XMFLOAT3 pos;
+	Vertex(float x, float y, float z, float u, float v) : pos(x, y, z,1.0f), texCoord(u, v) {}
+	XMFLOAT4 pos;
 	XMFLOAT2 texCoord;
 };
 
-
+struct Vertex2 {
+	//Vertex(float x, float y, float z, float u, float v) : pos(x, y, z), texCoord(u, v) {}
+	XMFLOAT4 pos;
+	XMFLOAT2 texCoord;
+};
 
 // TODO: reference additional headers your program requires here

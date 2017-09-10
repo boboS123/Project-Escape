@@ -48,6 +48,8 @@ public:
 
 	
 	LRESULT MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+	LRESULT DialogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
 protected:
 
 

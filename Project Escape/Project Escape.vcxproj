@@ -74,10 +74,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>C:\Workspace\_bin\Debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Workspace\_FinalGame\lib;C:\Workspace\_bin\Debug;$(LibraryPath)</LibraryPath>
     <OutDir>..\..\_bin\Debug</OutDir>
-    <IncludePath>C:\Workspace\Project Escape\escape\engine;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\shared;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Workspace\Project Escape\escape;C:\Workspace\Project Escape\escape\engine;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10586.0\shared;$(IncludePath)</IncludePath>
     <IntDir>..\..\_bin\Debug</IntDir>
+    <ExecutablePath>C:\Workspace\_FinalGame\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -111,6 +112,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>escape.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)$(TargetFileName)" "C:\Workspace\_FinalGame\Debug" /s /i /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
